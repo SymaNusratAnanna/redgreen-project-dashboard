@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from 'antd';
 import {LeftOutlined,RightOutlined,MoreOutlined} from '@ant-design/icons';
-import { Col, Divider, Row } from 'antd';
+
 
 import cloud from '../images/cloudy (1).png'
 
@@ -10,17 +10,14 @@ const Weather = () => {
     
             
             
-             
-           <Card
-           style={{
-            width:"40%",
-            
-            
-           }}>
+             <Card style={{ width:"70%",
+             marginLeft:10}}>
+          
             <div> 
             <div style={{
                 display:"flex",
                 justifyContent:"space-between",
+
                }}>
                <div>
                <h2 style={{
@@ -110,7 +107,8 @@ const Weather = () => {
               </div>
               </div>
               </div>
-           </Card>
+              </Card>
+         
               
          
          

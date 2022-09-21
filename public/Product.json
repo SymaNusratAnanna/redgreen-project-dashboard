@@ -1,0 +1,62 @@
+[
+    {
+      "name": "TV",
+      "title": "OnePlus TV 44 Inch",
+      "profit": 10,
+      "sales": "5k"
+    },
+    {
+      "name": "Mb",
+      "title": "Umi Smartphone",
+      "profit": 10,
+      "sales": "4.5k"
+    },
+    {
+      "name": "JP",
+      "title": "Chuwi Laptop",
+      "profit": 20,
+      "sales": "2k"
+    },
+    {
+      "name": "JP",
+      "title": "OnePlus TV YIG",
+      "profit": 1,
+      "sales": "2k"
+    },
+    {
+      "name": "JP",
+      "title": "Earphone",
+      "profit": -1,
+      "sales": "1.4"
+    },
+    {
+      "name": "JP",
+      "title": "Charger",
+      "profit": -5,
+      "sales": "1.3k"
+    },
+    {
+      "name": "JP",
+      "title": "Cable",
+      "profit": -50,
+      "sales": "1.3k"
+    },
+    {
+      "name": "JP",
+      "title": "Electric Car",
+      "profit": -5,
+      "sales": "1.2k"
+    },
+    {
+      "name": "JP",
+      "title": "ERP Software",
+      "profit": 5,
+      "sales": "870"
+    },
+    {
+      "name": "JP",
+      "title": "Electric Car",
+      "profit": 6,
+      "sales": "720"
+    }
+]

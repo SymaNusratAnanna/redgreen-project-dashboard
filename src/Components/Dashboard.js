@@ -10,6 +10,7 @@ import Chart from './Charts/Chart';
 import Weather from './Weather';
 import DataTable from './DataTable';
 import Piechart from './Charts/Piechart';
+import SalesDetails from './SalesDetails';
 
 const { Header, Content, Sider } = Layout;
 const { Option } = Select;
@@ -148,19 +149,59 @@ const Dashboard = () =>  {
       <Col style={{width:'350px'}} flex={2}>
       <Card style={{height:"80vh",marginRight:"10px",boxShadow:"10px"}}>
       <p style={{fontSize:24,fontWeight:"bold"}}>Sales chart</p>
-        <p style={{color:'gray'}}>Laptop</p>
+      <div  style={{
+            display:"flex",
+            justifyContent:"space-between"
+          }}>
+          <div>
+            <p style={{color:'gray'}}>Todays Sale</p>
+          </div>
+              <div>
+              <Select 
+      defaultValue="Today"
+      style={{
+      width: 100,
+      }}
+      
+    >
+      <Option value="Last week">Last week</Option>
+      <Option value="Last Month">Last Month</Option>
+    </Select>
+              </div>
+        </div>
         <p style={{fontSize:28,fontWeight:"semiBold"}}>156</p>
-        <Piechart></Piechart>
+      <Piechart/>
   </Card>
       </Col>
   
     </Row>
-                      
-                       
-                        <DataTable></DataTable>
-                        
-                        <Weather></Weather>
-                        </div>
+    <div style={{
+        justifyContent:"space-between",
+    }}>
+    <Row>
+     
+     <Col flex={2}>
+     <Card style={{margin:10,}}>
+      <DataTable></DataTable>
+      </Card>
+      </Col>
+     
+     <Col flex={2}>
+     <Card style={{margin:10,}}>
+      <SalesDetails></SalesDetails>
+      </Card>
+      
+      <Weather></Weather>
+     
+       
+         
+
+      </Col>
+
+          
+    </Row>
+    </div>
+    </div>
 
                     </Content>
                 </Layout>

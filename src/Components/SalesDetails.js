@@ -1,16 +1,15 @@
+import React from 'react';
 import { Divider } from 'antd';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { MoreOutlined } from '@ant-design/icons';
-import React, { useEffect, useState } from 'react';
 
-
-const DataTable = () =>{
-    const [AllSalesData, setSalesData] = useState([]);
+const SalesDetails = () => {
+    const [sells, setSells] = useState([]);
 
     useEffect(()=>{
-        fetch('product.json')
+        fetch('sells.json')
         .then(res=>res.json())
-        .then(data=>setSalesData(data))
+        .then(data=>setSells(data))
     },[])
 
     return (
@@ -28,16 +27,26 @@ const DataTable = () =>{
                             fontSize:"22px", 
                             fontWeight: "bold",
                         }}>
-                            Most Popular Product
+                            Sales
                     </h1>
+                   
                 </div>
                 <div>
                     <MoreOutlined style={{ fontSize: '22px'}} />
                 </div>
             </div>
+            <div style={{display:"flex"}}>
+                        <div style={{color: "#5C5C5C",fontSize:"16px"}}>
+                            Monthly Sales
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                    <p style={{fontSize: "28px"}}>918</p>
             <div>
             {
-                AllSalesData.map(salesData=>
+                sells.map(sell=>
                     <div>
                         <div className='product-main'>
                         <div className='product-sub'>
@@ -46,33 +55,27 @@ const DataTable = () =>{
                                     style={{
                                         width: "45px",
                                         marginRight: "8px",
-                                        padding: "8px 10px",
                                         textAlign: "center",
-                                        borderRadius: "8px",
-                                        border: "1px solid #d5cfcf",
                                         fontFamily: 'Poppins'
                                     }}>
-                                    <h1>{salesData.name}</h1>
+                                    <img src={sell.pic} alt="" />
                                 </div>
                             </div>
                             <div>
-                                <h1>{salesData.title}</h1>
+                                <h1>{sell.product}</h1>
                                 {
-                                    salesData.profit < 0
-                                    ?
-                                    <h5 style={{color: "red"}}>{salesData.profit}% Increase</h5>
-                                    :
-                                    <h5 style={{color: "#747474"}}>{salesData.profit}% Increase</h5>
+                                  
+                                    <h5 style={{color: "#747474"}}>{sell.seller}</h5>
                                 }
                             </div>
                         </div>
                         <div>
                             <span
                                 style={{
-                                    color: "red"
+                                    color: "#2D5BFF"
                                 }}
                             >
-                                {salesData.sales}
+                                {sell.detail}
                             </span>
                         </div>
                        
@@ -89,4 +92,5 @@ const DataTable = () =>{
         </div>
     );
 };
-export default DataTable;
+
+export default SalesDetails;
