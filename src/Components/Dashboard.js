@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import "antd/dist/antd.css";
 import { Layout, Menu, Input, Avatar, Badge, Select, Alert, Col, Card, Row } from 'antd';
-import { SearchOutlined } from '@ant-design/icons';
+import { SearchOutlined,  AlignRightOutlined } from '@ant-design/icons';
 import { BsFillBellFill } from 'react-icons/bs';
+import { GrMapLocation } from 'react-icons/gr';
+import { BsMenuButton } from 'react-icons/bs';
+import { AiTwotoneSetting } from 'react-icons/ai';
+import { HiUser } from 'react-icons/hi';
+import { BsFillInfoSquareFill } from 'react-icons/bs';
 import "../index.css";
 import rain from "../images/heavy-rain.png";
 import Chart from './Charts/Chart';
@@ -15,9 +20,10 @@ import SalesDetails from './SalesDetails';
 const { Header, Content, Sider } = Layout;
 const { Option } = Select;
 
-function getItem(label, key, children, type) {
+function getItem( icon, label, key, children, type) {
     return {
         key,
+        icon,
         label,
         children,
         type
@@ -25,10 +31,17 @@ function getItem(label, key, children, type) {
 }
 
 const items = [
-
-    getItem('Menu', 'g1', [getItem('Dashboard', '1'), getItem('Maps', '2'), getItem('Menu', '3')], 'group'),
-    getItem('Others', 'g2', [getItem('Settings', '4'), getItem('Accounts', '5'), getItem('Helps', '6')], 'group'),
-]
+   
+    getItem('icon1','Menu', 'g1', [getItem( <AlignRightOutlined style={{transform: "rotate(90deg)"}} />,'Dashboard','1'),
+    getItem(  <GrMapLocation/>,'Maps','2'),
+    getItem( <BsMenuButton/> ,'Menu','3')
+  ] ,'group'),
+   getItem('icon2','Others', 'g2',[
+    getItem(  <AiTwotoneSetting/>,'Settings','4'),
+    getItem(  <HiUser/>,'Accounts','5'),
+    getItem(  <BsFillInfoSquareFill/>,'Help','6'),
+   ], 'group'),
+  ]
 
 const suffix = (
     <SearchOutlined
@@ -102,7 +115,7 @@ const Dashboard = () =>  {
                     />
                 </Sider>
                 <Layout >
-                    <Content style={{ marginTop: "50px", backgroundColor: '#FFFFFF' }}>
+                    <Content style={{ marginTop: "50px", backgroundColor: '#FFFFFF',}}>
                         <div style={{ margin: 30 }}>
                             <p style={{ fontSize: 20, fontWeight: 'bold' }}>Redgreen Sales</p>
                             <img src={rain} style={{position: 'absolute',   width:"80px",zIndex: 3, marginLeft: 20, marginTop:5}} alt="" />
@@ -175,32 +188,24 @@ const Dashboard = () =>  {
       </Col>
   
     </Row>
-    <div style={{
-        justifyContent:"space-between",
-    }}>
+    
     <Row>
      
-     <Col flex={2}>
-     <Card style={{margin:10,}}>
+     <Col span={12}>
+     <Card style={{margin:10}}>
       <DataTable></DataTable>
       </Card>
       </Col>
      
-     <Col flex={2}>
-     <Card style={{margin:10,}}>
+     <Col span={12}>
+     <Card style={{margin:10}}>
       <SalesDetails></SalesDetails>
       </Card>
-      
+      <Card style={{margin:10}}>
       <Weather></Weather>
-     
-       
-         
-
-      </Col>
-
-          
+      </Card>
+      </Col>  
     </Row>
-    </div>
     </div>
 
                     </Content>

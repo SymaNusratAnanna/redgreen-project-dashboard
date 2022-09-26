@@ -48,8 +48,8 @@ const SalesDetails = () => {
             {
                 sells.map(sell=>
                     <div>
-                        <div className='product-main'>
-                        <div className='product-sub'>
+                        <div className='names'>
+                        <div className='content'>
                             <div>
                                 <div 
                                     style={{
