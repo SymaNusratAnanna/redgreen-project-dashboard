@@ -52,7 +52,7 @@ const suffix = (
     />
 );
 const Dashboard = () =>  {
-    const [show, setShow] = useState(true);
+    const [show] = useState(true);
     return (
         <Layout >
             <Header style={{
