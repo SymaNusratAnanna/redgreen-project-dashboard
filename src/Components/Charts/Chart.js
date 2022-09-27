@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+
 import { Line } from '@ant-design/plots';
 import 'moment/locale/zh-cn';
 const Chart = () =>{
